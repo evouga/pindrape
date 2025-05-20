@@ -73,7 +73,7 @@ void run_simulation(const LibShell::MeshConnectivity &mesh,
   rest_state.lameAlpha.resize(mesh.nFaces(), lame_alpha);
   rest_state.lameBeta.resize(mesh.nFaces(), lame_beta);
 
-  std::shared_ptr<LibShell::MaterialModel<SFF>> mat = std::make_shared<LibShell::StVKMaterial<SFF>>();
+  std::shared_ptr<LibShell::MaterialModel<SFF>> mat = std::make_shared<LibShell::NeoHookeanMaterial<SFF>>();
 
   // projection matrix
   Eigen::SparseMatrix<double> P;
